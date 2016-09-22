@@ -109,6 +109,30 @@ void insertionSort(int array[], bool ascending, int size)
 
     for(int i = 0; i < size ; i ++)cout << array[i] << endl;
 }
+
+void mergeSort(int array[], bool ascending, int size)
+{
+    if(size != 1)
+    {
+        int firstHalf = size/2;
+        int secondHalf = size - firstHalf;
+
+        int a1[firstHalf] ={};
+        for (int i = 0; i < firstHalf; i++) a1[i] = array[i];
+
+        cout << "first half is" << endl;
+        for(int m = 0; m < firstHalf; m++)cout << a1[m] << endl;
+
+        int a2[secondHalf] = {};
+        for (int j = firstHalf; j < size; j++) a2[j] = array[j];
+
+        cout << "secondHalf is " << endl;
+        for(int l = firstHalf; l < size; l++)cout << a2[l] << endl;
+        cout << "we will now merge a1 with size" << firstHalf << endl;
+        mergeSort(a1, ascending, firstHalf );
+        //mergeSort(a2, ascending, secondHalf);
+    }
+}
 /*inertionSort(Array)
         {
                 // unsorted = first index of the unsorted region,
@@ -164,8 +188,8 @@ int main (){
             break;
     }
 
-    insertionSort(array,order,len);
-
+    //insertionSort(array,order,len);
+    mergeSort(array,order,len);
     //selectionSort(array,order,len);
 
     //bubbleSort(array, len);

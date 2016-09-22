@@ -112,7 +112,7 @@ void insertionSort(int array[], bool ascending, int size)
 
 void mergeSort(int array[], bool ascending, int size) {
 
-    for (int m = 0; m < size; m++)cout << array[m] << " would be " << m << endl;
+    //for (int m = 3; m < 3+size; m++)cout << array[m] << " would be " << m << endl;
     if (size != 1) {
         int firstHalf = size / 2;
         //cout << "fhsize " << firstHalf << endl;
@@ -121,22 +121,19 @@ void mergeSort(int array[], bool ascending, int size) {
         //cout << "shsize " << secondHalf << endl;
 
         int a1[firstHalf] = {};
-        for (int i = 0; i < firstHalf; i++) {
-            a1[i] = array[i];
-            /*cout << i << "Th term is " << array[i] << endl;  */
-        };
+        for (int i = 0; i < firstHalf; i++)a1[i] = array[i];
 
         cout << "first half is" << endl;
         for (int m = 0; m < firstHalf; m++)cout /*<< "when m is " << m << " a1 is " */<< a1[m] << endl;
 
         int a2[secondHalf] = {};
-        for (int j = firstHalf; j < size; j++) a2[j] = array[j];
+        for (int j = 0; j < secondHalf; j++) a2[j] = array[firstHalf + j];
 
         cout << "secondHalf is " << endl;
-        for (int l = firstHalf; l < size; l++)cout << a2[l] << endl;
-        cout << "we will now merge a1 with size" << firstHalf << endl;
+        for (int l = 0; l < secondHalf; l++)cout << "when m is " << l << " a2 is " << a2[l] << endl;
+        //cout << "we will now merge a1 with size" << firstHalf << endl;
         //mergeSort(a1, ascending, firstHalf);
-        cout << "we will now merge a1 with size" << secondHalf << endl;
+        cout << "we will now merge a2 with size" << secondHalf << endl;
         mergeSort(a2, ascending, secondHalf);
         }
     }
@@ -165,7 +162,7 @@ int main (){
 
 
 
-    int array[] = {6,1,5,2,4,14};
+    int array[] = {6,1,5,2,4,14,9};
     int len = sizeof(array)/sizeof(array[0]);
 
     //cout << "size is " << len << endl;

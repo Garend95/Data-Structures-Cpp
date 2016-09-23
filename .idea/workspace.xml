@@ -36,14 +36,16 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="88" column="18" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
+            <state relative-caret-position="299">
+              <caret line="195" column="24" selection-start-line="195" selection-start-column="24" selection-end-line="195" selection-end-column="24" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#60#286#0" expanded="false" />
+                <element signature="e#289#624#0" expanded="false" />
                 <element signature="e#626#1185#0" expanded="false" />
-                <element signature="e#2207#2633#0" expanded="false" />
-                <element signature="e#2635#3467#0" expanded="false" />
-                <element signature="e#3468#4615#0" expanded="false" />
+                <element signature="e#1188#2205#0" expanded="false" />
+                <element signature="e#3038#3870#0" expanded="false" />
+                <element signature="e#3871#5018#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -289,7 +291,8 @@
       <updated>1474543631750</updated>
       <workItem from="1474543635408" duration="11816000" />
       <workItem from="1474556813819" duration="3952000" />
-      <workItem from="1474564960513" duration="5882000" />
+      <workItem from="1474564960513" duration="6001000" />
+      <workItem from="1474581640118" duration="3262000" />
     </task>
     <task id="LOCAL-00001" summary="started work on merge sort branching">
       <created>1474547484282</created>
@@ -312,15 +315,22 @@
       <option name="project" value="LOCAL" />
       <updated>1474554926119</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="problems with temporary array and return, selection sort descending done with compromise. Bubble sort possible with descending">
+      <created>1474571437453</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1474571437453</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21650000" />
+    <option name="totallyTimeSpent" value="25031000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1366" height="768" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -357,10 +367,13 @@
     <MESSAGE value="started work on merge sort branching" />
     <MESSAGE value="errors when branching, indexes correspond to wrong numbers" />
     <MESSAGE value="fixed incorrect indexing issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed incorrect indexing issue" />
+    <MESSAGE value="problems with temporary array and return, selection sort descending done with compromise. Bubble sort possible with descending" />
+    <option name="LAST_COMMIT_MESSAGE" value="problems with temporary array and return, selection sort descending done with compromise. Bubble sort possible with descending" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -370,10 +383,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#60#286#0" expanded="false" />
+            <element signature="e#289#624#0" expanded="false" />
             <element signature="e#626#1185#0" expanded="false" />
-            <element signature="e#2207#2633#0" expanded="false" />
-            <element signature="e#2635#3467#0" expanded="false" />
-            <element signature="e#3468#4615#0" expanded="false" />
+            <element signature="e#1188#2205#0" expanded="false" />
+            <element signature="e#3038#3870#0" expanded="false" />
+            <element signature="e#3871#5018#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -384,24 +399,44 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#60#286#0" expanded="false" />
+            <element signature="e#289#624#0" expanded="false" />
             <element signature="e#626#1185#0" expanded="false" />
-            <element signature="e#2207#2633#0" expanded="false" />
-            <element signature="e#2635#3467#0" expanded="false" />
-            <element signature="e#3468#4615#0" expanded="false" />
+            <element signature="e#1188#2205#0" expanded="false" />
+            <element signature="e#3038#3870#0" expanded="false" />
+            <element signature="e#3871#5018#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="88" column="18" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#60#286#0" expanded="false" />
+            <element signature="e#289#624#0" expanded="false" />
             <element signature="e#626#1185#0" expanded="false" />
-            <element signature="e#2207#2633#0" expanded="false" />
-            <element signature="e#2635#3467#0" expanded="false" />
-            <element signature="e#3468#4615#0" expanded="false" />
+            <element signature="e#1188#2205#0" expanded="false" />
+            <element signature="e#3038#3870#0" expanded="false" />
+            <element signature="e#3871#5018#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="195" column="24" selection-start-line="195" selection-start-column="24" selection-end-line="195" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#60#286#0" expanded="false" />
+            <element signature="e#289#624#0" expanded="false" />
+            <element signature="e#626#1185#0" expanded="false" />
+            <element signature="e#1188#2205#0" expanded="false" />
+            <element signature="e#3038#3870#0" expanded="false" />
+            <element signature="e#3871#5018#0" expanded="false" />
           </folding>
         </state>
       </provider>

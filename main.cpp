@@ -93,22 +93,30 @@ void bubbleSort (int array[], bool ascending, int size)
     for(int j = 0; j < size; j++)cout << array[j] << endl;
 }
 
-void insertionSort(int array[], bool ascending, int size)
-{
-    for(int unsorted = 1; unsorted < size-1 ; unsorted++)
-    {
-        int nextItem = array[unsorted];
-        int loc = unsorted;
-        while(loc > 0 && array[loc - 1] > nextItem)
-        {
-            array[loc] = array[loc - 1] ;
-            loc--;
+void insertionSort(int array[], bool ascending, int size) {
+    if (ascending) {
+        for (int unsorted = 1; unsorted < size - 1; unsorted++) {
+            int nextItem = array[unsorted];
+            int loc = unsorted;
+            while (loc > 0 && array[loc - 1] > nextItem) {
+                array[loc] = array[loc - 1];
+                loc--;
+            }
+            array[loc] = nextItem;
+
         }
-        array[loc] = nextItem;
-
+    } else {
+        for (int unsorted = size - 2; unsorted > 0; unsorted--) {
+            int nextItem = array[unsorted];
+            int loc = unsorted;
+            while (loc < size - 1 && array[loc + 1] > nextItem) {
+                array[loc] = array[loc - 1];
+                loc++;
+            }
+            array[loc] = nextItem;
+        }
+        for (int i = 0; i < size; i++)cout << array[i] << endl;
     }
-
-    for(int i = 0; i < size ; i ++)cout << array[i] << endl;
 }
 
 int* merge(int array1[], int array2[], int size1, int size2 )
@@ -177,30 +185,34 @@ int* mergeSort(int array[], bool ascending, int size) {
 
 int main (){
 
+    int array[] = {6,1,5,2,4,14,9};
+    cout << "Hello, we'll now be sorting the array {6,1,5,2,4,14,9}, please make a choice" << endl;
 
 
-    //int array[] = {6,1,5,2,4,14,9};
-    int array[] = {1,2,3,4};
     int len = sizeof(array)/sizeof(array[0]);
 
     //cout << "size is " << len << endl;
-    /*cout << "Hello, please choose the desired sort method" << endl
+    cout << "Please choose the desired sort method" << endl
          << "1.selection sort"  << endl
          << "2.bubble sort" << endl
-         << "3.merge sort" << endl
-         << "4.insertion sort" << endl
-         << "quicksort" << endl;*/
+         << "3.merge sort (not functional)" << endl
+         << "4.insertion sort (incorrect descending)" << endl
+         << "quicksort (unavailable)" << endl;
+
+    int choice1;
+    cin >> choice1;
+
 
     cout << "Ascending or descending?" << endl
          << "1.Ascending" << endl
          << "2.Descending" << endl;
 
-    int choice;
-    cin >> choice;
+    int choice2;
+    cin >> choice2;
 
     bool order = false;
 
-    switch (choice) {
+    switch (choice2) {
         case 1:
             order = true;
             break;
@@ -211,13 +223,30 @@ int main (){
             break;
     }
 
+    switch (choice1) {
+        case 1:
+            selectionSort(array,order,len);
+            break;
+        case 2:
+            bubbleSort(array, order ,len);
+            break;
+        case 3:
+            mergeSort(array,order,len);
+            break;
+        case 4:
+            insertionSort(array,order,len);
+            break;
+
+        default:
+            break;
+    }
     //insertionSort(array,order,len);
     //selectionSort(array,order,len);
     //mergeSort(array,order,len);
     //int result[len];
     //copy(begin(mergeSort(array,order,len)),end(mergeSort(array,order,len)), begin(result));
     //for(int n = 0; n < len; n++)cout << mergeSort(array,order,len) << endl;
-    bubbleSort(array, order ,len);
+    //bubbleSort(array, order ,len);
 
     //cout << "biggest is" << array[biggest] << endl;
     return 0;

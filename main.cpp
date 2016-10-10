@@ -1,5 +1,5 @@
 #include<iostream>
-#include <cstring>
+#include <vector>
 
 using namespace std;
 void swap(int first, int second, int array[])
@@ -119,6 +119,7 @@ void insertionSort(int array[], bool ascending, int size) {
     }
 }
 
+/*
 int* merge(int array1[], int array2[], int size1, int size2 )
 {
     int pointer1 = 0;
@@ -153,6 +154,8 @@ int* merge(int array1[], int array2[], int size1, int size2 )
     }
     return tempArray;
 }
+*/
+/*
 int* mergeSort(int array[], bool ascending, int size) {
 
     //for (int m = 3; m < 3+size; m++)cout << array[m] << " would be " << m << endl;
@@ -167,7 +170,9 @@ int* mergeSort(int array[], bool ascending, int size) {
         for (int i = 0; i < firstHalf; i++)a1[i] = array[i];
 
         //cout << "first half is" << endl;
-        //for (int m = 0; m < firstHalf; m++)cout /*<< "when m is " << m << " a1 is " */<< a1[m] << endl;
+        //for (int m = 0; m < firstHalf; m++)cout */
+/*<< "when m is " << m << " a1 is " *//*
+<< a1[m] << endl;
 
         int a2[secondHalf] = {};
         for (int j = 0; j < secondHalf; j++) a2[j] = array[firstHalf + j];
@@ -182,8 +187,29 @@ int* mergeSort(int array[], bool ascending, int size) {
         }
 
     }
+*/
 
 int main (){
+
+    vector<double> student_marks;
+    // no size specified: vector contains
+    // no elements
+
+    int num_students;
+    cout << "Number of students: " << flush;
+    cin >> num_students;
+
+    student_marks.resize (num_students);
+
+    for (vector<double>::size_type i = 0; i < num_students; i++)
+    {
+        cout << "Enter marks for student #" << i+1
+             << ": " << flush;
+        cin >> student_marks[i];
+    }
+    // ... Do some stuff with the values
+
+
 
     int array[] = {6,1,5,2,4,14,9};
     cout << "Hello, we'll now be sorting the array {6,1,5,2,4,14,9}, please make a choice" << endl;
@@ -251,3 +277,13 @@ int main (){
     //cout << "biggest is" << array[biggest] << endl;
     return 0;
 }
+
+//
+// Created by garen_dan on 9/24/16.
+//
+
+
+
+
+
+

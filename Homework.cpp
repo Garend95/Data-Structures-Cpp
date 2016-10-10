@@ -23,19 +23,46 @@ void print(){
     cout << endl;
 }
 
-void enqueue(int x){
+void enqueue(){
+
+	cout << "please insert number to enqueue: ";
+	int x ; cin >> x;
+
 	Node* temp = (Node*) malloc(sizeof(Node));
 	temp->data = x;
 	temp->next = head;
 	head = temp;
+
+	print();
 }
 
-void dequeue(Node* head){
+bool Is_empty()
+{
+	Node* temp = head;
+	return ( temp->next != NULL ? false : true);
+}
+
+int Get_top()
+{
+	Node* top = head;
+	return top->data;
+}
+
+int Get_front()
+{
+	Node* front = head;
+	while(front->next != NULL) front = front->next;
+	return front->data;
+}
+void dequeue(){
     Node* temp = head;
-    while(temp != NULL){
-        temp = temp->next;
-        if(temp->next == NULL) temp = NULL;
+    while(temp->next->next != NULL){//error when having only one element in list
+        
+		temp = temp->next;
+	
     }
+	temp->next = NULL;
+	print();
 }
 
 void pop(){
@@ -48,19 +75,20 @@ void pop(){
 
 void push(){
 
-        cout << "please insert number to push: ";
+    cout << "please insert number to push: ";
 	int x ; cin >> x;
 	
 	Node* temp = (Node*) malloc(sizeof(Node));
 	temp->data = x;
 	temp->next = NULL;
-	cout << "im ok";
 	
+	cout << "this code was reached"; // surprisingly won't print even though the problem lies on line where the traverse node is initaialized
+ 	
 	Node* traverse = head; //used for finding the last node to insert a new one
-        while(traverse->next != NULL){
+    /*    while(traverse->next != NULL){
 	    traverse = traverse->next;            
 	    }
-	traverse->next = temp;  
+	traverse->next = temp; */ 
 	print();  
 }
 
@@ -79,8 +107,8 @@ int main(){
 		int choice;
 		while(choice != 5){
 			cout << "What would you like to do with the stack? " << endl
-			<< "1.Push" << endl
-			<< "2.Pop" << endl
+			<< "1.Push //segmentation issue" << endl
+			<< "2.Pop // " << endl
 			<< "3.Is_empty" << endl
 			<< "4.Get_top" << endl
 			<< "5.Exit " << endl;
@@ -95,8 +123,10 @@ int main(){
 					pop();
 					break;
 				case 3:
+					Is_empty();
 					break;
 				case 4:
+					cout << "top is " << Get_top() << endl;
 					break;
 				case 5: 
 					break;		
@@ -107,26 +137,39 @@ int main(){
 		
         }
 	else{
-	
-		cout << "How many numbers?" << endl;
-		int n , x ; cin >> n;
-		
+
 		int choice;
 		while(choice != 5){
-			cout << "What would you like to do with the stack? " << endl
-		        << "1.Enqueue" << endl
+			cout << "What would you like to do with the queue? " << endl
+		    << "1.Enqueue" << endl
 			<< "2.Dequeue" << endl
 			<< "3.Is_empty" << endl
 			<< "4.Get_front" << endl
 			<< "5.Exit " << endl;
-		}
+			cin >> choice;
 		
-		for(int i = 0; i < n ; i++){
-		    cout << "please insert term no." << i << ":" ;
-		    cin >> x;
-		    enqueue(x);
-		    print();
-		}	
+		switch (choice)
+				{
+				case 1:
+					enqueue();	
+					break;
+				case 2:
+					dequeue();
+					break;
+				case 3:
+					cout << Is_empty() << endl;
+					break;
+				case 4:
+					cout << "front is " << Get_front() << endl;
+					break;
+				case 5: 
+					break;		
+				}
+		
+		}
+			
+			
+		
 	}
 
 	

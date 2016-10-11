@@ -191,25 +191,6 @@ int* mergeSort(int array[], bool ascending, int size) {
 
 int main (){
 
-    vector<double> student_marks;
-    // no size specified: vector contains
-    // no elements
-
-    int num_students;
-    cout << "Number of students: " << flush;
-    cin >> num_students;
-
-    student_marks.resize (num_students);
-
-    for (vector<double>::size_type i = 0; i < num_students; i++)
-    {
-        cout << "Enter marks for student #" << i+1
-             << ": " << flush;
-        cin >> student_marks[i];
-    }
-    // ... Do some stuff with the values
-
-
 
     int array[] = {6,1,5,2,4,14,9};
     cout << "Hello, we'll now be sorting the array {6,1,5,2,4,14,9}, please make a choice" << endl;

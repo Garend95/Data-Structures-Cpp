@@ -14,14 +14,32 @@ class tree {
 	public:
 		void insert(int data);
 		void insertFirst();
+		void insertHelper(Node* subTree, Node newNode);
 		void remove();
 		bool isEmpty();
 		int getHeight();
 		int find(); 
 };
 
+void tree::insertHelper(Node* subTree, Node newNode){
+	if (subTree == NULL)
+        	subTree = newNode;
+
+        else if (subTree->left < subTree->right)
+        {
+                insertHelper(subTree->left, newNode);
+        } else {
+                insertHelper(subTree->right, newNode);
+	}	
+}
+
 void tree::insert(int data){
-	
+	    newNode = new Node;
+	    newNode->data = data;
+	    newNode->right = NULL;
+	    newNode->left = NULL;
+
+	    insertHelper(root, newNode);
 }
 
 int main(){

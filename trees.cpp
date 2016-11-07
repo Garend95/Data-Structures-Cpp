@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+
 struct Node {
 	int data;
 	Node* left;
@@ -16,7 +17,9 @@ class tree {
 		void insertFirst();
 		void insertHelper(Node* &subTree, Node* newNode);
 		void remove(int data, Node* startingPoint = NULL);
-		bool isEmpty();
+		void inorder();
+		void preorder();
+		void postorder();
 		int getHeight();
 		int find(); 
 		Node* getRoot()
@@ -84,33 +87,44 @@ int main(){
         
         switch (choice) {
             case 1:
-                
+                cout << "input an integer please:" << endl;
+                cin >> member;
+                tr.insert(member);
                 break;
             case 2:
-                
+                cout << "insert integer to remove from tree:" << endl;
+                cin >> member;
+                //tr.remove(member)
                 break;
             case 3:
-                
+                cout << "insert integer to find in tree:" << endl;
+                cin >> member;
+                //bool result = tr.find(member);
+                //cout << "Search result is: " << result << endl;
                 break;
             case 4:
-                
+                //tr.inorder();
                 break;
             case 5:
-                
+                //tr.preorder();
                 break;
             case 6:
-                
+                //tr.postorder();
                 break;
             case 7:
-                
+                //int result = tr.getHeight();
+                //cout << "the height of the tree is " << result << endl;
                 break;
             case 0:
                 
-                break;    
+                break;
+            default:
+            
+                cout << "invalid input please try again" << endl << endl;
         }
     
         
-    }while(choice != 0)  
+    }while(choice != 0);  
          
     //tr.insert(5);
 	//cout << "Turn down for what!?" << endl;
